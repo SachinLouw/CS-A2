@@ -1,0 +1,52 @@
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.File;
+
+public class LSBST extends BinarySearchTree<LSObj>{
+    private BinarySearchTree<LSObj> tree;
+    private BinaryTreeNode<LSObj> root;
+	
+    public LSBST(){}
+	
+    public BinarySearchTree<LSObj> makeTree(){
+    	this.tree = new BinarySearchTree<LSObj>();
+    	try{
+	   File lsSc = new File("Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");
+	   Scanner sc;
+	   sc = new Scanner(lsSc);
+	   while (sc.hasNextLine()){
+	   	String[] line = sc.nextLine().split(" ",2);
+		LSObj data = new LSObj(line[0], line[1]);
+		tree.insert(data);
+	}
+	sc.close();
+       
+	} 
+	catch (FileNotFoundException e) {
+		System.out.println("An error occurred.");
+		e.printStackTrace();
+	}
+	return tree;
+    }
+	
+    public void printAreas (String stage, String day, String startTime){
+	String str1 = stage + "_" + day + "_" + startTime;
+	String str2 = "";
+	LSObj input = new LSObj(str1, str2);
+	this.tree = makeTree();
+	String zones = (tree.find(input).data).getZones();
+		
+	if (zones.length()>0){
+		System.out.println(zones);
+	}
+	else{
+		System.out.println("No results found"); 
+	}
+    }
+    
+    public void printAllAreas (){
+	this.tree = makeTree();
+	tree.inOrder();
+    }
+    
+}
