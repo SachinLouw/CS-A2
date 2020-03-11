@@ -1,8 +1,17 @@
 import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.lang.NullPointerException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
+
+/**
+* <h1>LSAVL</h1>
+* Stores data from file in a AVL and processes it based on given input criteria
+* <p>
+*
+* @author  LWXSAC001
+*/
 
 public class LSAVL extends AVLTree<LSObj>{
     private AVLTree<LSObj> tree;
@@ -14,10 +23,12 @@ public class LSAVL extends AVLTree<LSObj>{
     }
 	
     public AVLTree<LSObj> makeTree(String fileName){
+		/**Creates an AVL tree containing loadshedding data*/
 		insCount  = 0;
 		balCount = 0;
     	this.tree = new AVLTree<LSObj>();
-    	try{
+		
+		try{
 			File lsSc = new File(fileName);
 			Scanner sc;
 			sc = new Scanner(lsSc);
@@ -37,17 +48,19 @@ public class LSAVL extends AVLTree<LSObj>{
     }
 	
    public void printAreas (String stage, String day, String startTime, String output ){
+		/*Outputs the areas affected by loadshedding given stage, date and time as input */
 		String str1 = stage + "_" + day + "_" + startTime;
 		String str2 = "";
 		LSObj input = new LSObj(str1, str2);
 		findCount = 0;
-		String zones = (tree.find(input).data).getZones();
-		if (zones.length()>0)
-		{
+		
+		try{
+			BinaryTreeNode<LSObj> found = tree.find(input);
+			String zones = (found.data).getZones();
 			System.out.println(zones);
 		
 		}
-		else
+		catch(NullPointerException nodeIsNull)
 		{
 			System.out.println("No results found"); 
 		}
@@ -64,7 +77,7 @@ public class LSAVL extends AVLTree<LSObj>{
 				FileWriter fileWriter = new FileWriter(results, true);
 		
 				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-				bufferedWriter.write("logn, " + output.substring(7, (output.length() - 3)) + ", " + Integer.toString(insCount) + ", " + Integer.toString(findCount) +"\n");
+				bufferedWriter.write("logn, " + output.substring(7, (output.length() - 4)) + ", " + Integer.toString(insCount) + ", " + Integer.toString(findCount) +"\n");
 				bufferedWriter.close();
 			} catch(Exception e) {
 				System.out.println("COULD NOT LOG!!");
@@ -76,6 +89,7 @@ public class LSAVL extends AVLTree<LSObj>{
     }
     
    public void printAllAreas (){
+		/*Outputs all the areas affected by loadshedding for all stages*/
 		tree.inOrder();
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));
 		System.out.println("Number of balance operations: "+ Integer.toString(balCount));

@@ -10,10 +10,9 @@ all:
 clean:
 	rm *.class
 run:
-	java -cp bin LSBSTApp
-docs:
-	javadoc -classpath ${BINDIR} -d docs/ src/*.java
+	java -cp bin/ LSAVLApp 1 1 00
+#docs:
+#	javadoc -classpath ${BINDIR} -d docs/ src/*.java
 
-cleandocs:
-	rm -r docs/*
-
+#cleandocs:
+#	rm -r docs/*

@@ -4,9 +4,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 
+/**
+* <h1>LSAVL</h1>
+* Stores data from file in a BST and processes it based on given input criteria
+* <p>
+*
+* @author  LWXSAC001
+*/
+
 public class LSBST extends BinarySearchTree<LSObj>{
     private BinarySearchTree<LSObj> tree;
-	//Eddie vbits
 	private static int insCount;
 	private static int findCount;
 
@@ -14,6 +21,7 @@ public class LSBST extends BinarySearchTree<LSObj>{
     }
 	
     public BinarySearchTree<LSObj> makeTree(String fileName){
+		/**Creates a AVL tree containing loadshedding data*/
 		insCount  = 0;
     	this.tree = new BinarySearchTree<LSObj>();
     	try{
@@ -36,20 +44,20 @@ public class LSBST extends BinarySearchTree<LSObj>{
     }
 	
 	public void printAreas (String stage, String day, String startTime, String output ){
+		/*Outputs the areas affected by loadshedding given stage, date and time as input */
 		String str1 = stage + "_" + day + "_" + startTime;
 		String str2 = "";
 		LSObj input = new LSObj(str1, str2);
 		findCount = 0;
-		String zones = (tree.find(input).data).getZones();
 		
-		if (zones.length()>0)
-		{
+		try{
+			BinaryTreeNode<LSObj> found = tree.find(input);
+			String zones = (found.data).getZones();
 			System.out.println(zones);
 		
 		}
-		
-		else
-		{
+
+		catch(NullPointerException nodeIsNull) {
 			System.out.println("No results found"); 
 		}
 
@@ -65,7 +73,7 @@ public class LSBST extends BinarySearchTree<LSObj>{
 				FileWriter fileWriter = new FileWriter(results, true);
 		
 				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-				bufferedWriter.write("nlogn, " + output.substring(7, (output.length() - 3)) + ", " + Integer.toString(insCount) + ", " + Integer.toString(findCount) +"\n");
+				bufferedWriter.write("nlogn, " + output.substring(7, (output.length() - 4)) + ", " + Integer.toString(insCount) + ", " + Integer.toString(findCount) +"\n");
 				bufferedWriter.close();
 			} 
 			
@@ -79,6 +87,7 @@ public class LSBST extends BinarySearchTree<LSObj>{
     }
     
 	public void printAllAreas (){
+		/*Outputs all the areas affected by loadshedding for all stages*/
 		tree.inOrder();
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));
 	}

@@ -16,10 +16,10 @@ public class Testing{
     public static void main (String[] args){
 
 		for(int i = 1; i<=10; i++){
-			String output = "results" + Integer.toString(297*i) + ".csv";
+			String output = "data/results" + Integer.toString(297*i) + ".csv";
 			try{
 				String item[][] = new String[297*i][];
-				File lsSc = new File("sample_" + Integer.toString(i) + ".txt");
+				File lsSc = new File("data/sample_" + Integer.toString(i) + ".txt");
 				Scanner sc;
 				sc = new Scanner(lsSc);
 				int k = 0;
@@ -35,11 +35,11 @@ public class Testing{
 					String b = item[j][0].split("_")[1];
 					String c = item[j][0].split("_")[2];
 					LSAVL ls = new LSAVL ();
-	        	    		ls.makeTree("sample_" + Integer.toString(i) + ".txt");
+	        	    		ls.makeTree("data/sample_" + Integer.toString(i) + ".txt");
 					ls.printAreas(a, b, c, output);
 					
 					LSBST bs = new LSBST ();
-	        	    		bs.makeTree("sample_" + Integer.toString(i) + ".txt");
+	        	    		bs.makeTree("data/sample_" + Integer.toString(i) + ".txt");
 					bs.printAreas(a, b, c, output);
 				}		
 			}

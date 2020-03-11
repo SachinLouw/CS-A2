@@ -8,12 +8,19 @@ BINDIR=bin/
 all:
 	javac -d bin $(SRCDIR)/*.java
 clean:
-	rm *.class
+	rm */*.class
 run:
-	java -cp bin LSAVLApp
+	java -cp bin/ LSAVLApp 1 1 00
+	java -cp bin/ LSBSTApp 1 1 00
+run0:
+	java -cp bin/ LSAVLApp 9 1 00
+	java -cp bin/ LSBSTApp 9 1 00
+
+run00:
+	java -cp bin/ Testing
+
 docs:
 	javadoc -classpath ${BINDIR} -d docs/ src/*.java
 
-#cleandocs:
-#	rm -r docs/*
-
+cleandocs:
+	rm -r docs/*

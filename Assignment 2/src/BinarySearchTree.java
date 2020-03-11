@@ -9,6 +9,7 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
    
    public void insert ( dataType d )
    {
+      LSBST.insIncrement();
       if (root == null)
          root = new BinaryTreeNode<dataType> (d, null, null);
       else
@@ -16,6 +17,7 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
    }
    public void insert ( dataType d, BinaryTreeNode<dataType> node )
    {
+      LSBST.insIncrement();
       if (d.compareTo (node.data) <= 0)
       {
          if (node.left == null)
@@ -41,6 +43,7 @@ public class BinarySearchTree<dataType extends Comparable<? super dataType>> ext
    }
    public BinaryTreeNode<dataType> find ( dataType d, BinaryTreeNode<dataType> node )
    {
+      LSBST.findIncrement();
       if (d.compareTo (node.data) == 0) 
          return node;
       else if (d.compareTo (node.data) < 0)
