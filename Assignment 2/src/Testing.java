@@ -16,7 +16,7 @@ public class Testing{
     public static void main (String[] args){
 
 		for(int i = 1; i<=10; i++){
-			String output = "data/results" + Integer.toString(297*i) + ".csv";
+			String output = "results/results" + Integer.toString(297*i) + ".csv";
 			try{
 				String item[][] = new String[297*i][];
 				File lsSc = new File("data/sample_" + Integer.toString(i) + ".txt");
