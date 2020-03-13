@@ -1,8 +1,7 @@
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.BufferedWriter;
+
 
 /**
 * <h1>LSAVL</h1>
@@ -43,7 +42,7 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		return tree;
     }
 	
-	public void printAreas (String stage, String day, String startTime, String output ){
+	public void printAreas (String stage, String day, String startTime){
 		/*Outputs the areas affected by loadshedding given stage, date and time as input */
 		String str1 = stage + "_" + day + "_" + startTime;
 		String str2 = "";
@@ -61,31 +60,31 @@ public class LSBST extends BinarySearchTree<LSObj>{
 			System.out.println("No results found"); 
 		}
 
-		if (output!="")
-		{
-			File results = new File(output);
-		
-			try{
-				if(!results.exists()){
-					results.createNewFile();
-				}
-		
-				FileWriter fileWriter = new FileWriter(results, true);
-		
-				BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-				bufferedWriter.write("nlogn, " + output.substring(7, (output.length() - 4)) + ", " + Integer.toString(insCount) + ", " + Integer.toString(findCount) +"\n");
-				bufferedWriter.close();
-			} 
-			
-			catch(Exception e) {
-				System.out.println("COULD NOT LOG!!");
-			}
-		}
-
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));
 		System.out.println("Number of find operations: "+ Integer.toString(findCount));
-    }
-    
+	}
+	
+	public String[] printAreas (String stage, String day, String startTime, String output ){
+		/*Outputs the areas affected by loadshedding given stage, date and time as input */
+		String str1 = stage + "_" + day + "_" + startTime;
+		String str2 = "";
+		LSObj input = new LSObj(str1, str2);
+		findCount = 0;
+		
+		try{
+			BinaryTreeNode<LSObj> found = tree.find(input);
+			String zones = (found.data).getZones();
+			System.out.println(zones);
+		
+		}
+		catch(NullPointerException nodeIsNull)
+		{
+			System.out.println("No results found"); 
+		}
+		String[] result = {Integer.toString(insCount), Integer.toString(findCount)};
+		return result;
+	}
+
 	public void printAllAreas (){
 		/*Outputs all the areas affected by loadshedding for all stages*/
 		tree.inOrder();
