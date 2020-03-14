@@ -33,11 +33,11 @@ public class GenDataTables{
 
 				sc.close();
 				LSAVL ls = new LSAVL ();
-				int lsResult[][] = new int[2976][];
-				ls.makeTree("data/original.txt");
+				int lsResult[][] = new int[297*i][];
+				ls.makeTree("data/sample_" + Integer.toString(i) + ".txt");
 				LSBST bs = new LSBST ();
-				int bsResult[][] = new int[2976][];
-				bs.makeTree("data/original.txt");
+				int bsResult[][] = new int[297*i][];
+				bs.makeTree("data/sample_" + Integer.toString(i) + ".txt");
 		
 				int bestAVLInsert = 0;
 				int worstAVLinsert = 0;
@@ -60,6 +60,7 @@ public class GenDataTables{
 				int sumAVLBalance = 0;
 				
 				int n = 297*i;
+			
 
 				for (int j = 0; j<item.length; j++){
 					String a = item[j][0].split("_")[0];
@@ -70,12 +71,10 @@ public class GenDataTables{
 					bsResult[j] = bs.printAreas(a, b, c, output);
 					
 					if (j>0){
-						bestAVLInsert = Math.min(lsResult[j][0], lsResult[j-1][0]);
 						worstAVLinsert = Math.max(lsResult[j][0], lsResult[j-1][0]);
 						bestBSTIns = Math.min(bsResult[j][0], bsResult[j-1][0]);
 						worstBSTIns = Math.max(bsResult[j][0], bsResult[j-1][0]);
 
-						bestAVLFind = Math.min(lsResult[j][1], lsResult[j-1][1]);
 						worstAVLFind = Math.max(lsResult[j][1], lsResult[j-1][1]);
 						bestBSTFind = Math.min(bsResult[j][1], bsResult[j-1][1]);
 						worstBSTFind = Math.max(bsResult[j][1], bsResult[j-1][1]);
@@ -92,7 +91,9 @@ public class GenDataTables{
 					
 					sumAVLBalance += lsResult[j][2];
 				}
-
+				bestAVLInsert = lsResult[0][0];
+				bestAVLFind = lsResult[0][1];
+				
 				File results = new File(output);
 			
 				try{

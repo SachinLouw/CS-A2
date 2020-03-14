@@ -1,0 +1,100 @@
+297,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,2374,2831,8,5,2222
+Worst case, 2374,2831,9,19,2222
+Average case, 2374,2831,7,10,2222
+
+594,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,5333,5586,9,7,5030
+Worst case, 5333,5586,9,12,5030
+Average case, 5333,5586,8,10,5030
+
+891,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,8459,9612,11,11,7947
+Worst case, 8459,9612,11,13,7947
+Average case, 8459,9612,8,11,7947
+
+1188,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,11835,13897,11,9,11211
+Worst case, 11835,13897,11,14,11211
+Average case, 11835,13897,9,12,11211
+
+1485,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,15242,16775,8,10,14420
+Worst case, 15242,16775,11,16,14420
+Average case, 15242,16775,9,11,14420
+
+1782,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,18905,21257,9,7,18003
+Worst case, 18905,21257,11,13,18003
+Average case, 18905,21257,9,12,18003
+
+2079,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,22365,24138,8,13,21273
+Worst case, 22365,24138,12,13,21273
+Average case, 22365,24138,9,12,21273
+
+2376,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,26110,32136,11,16,24845
+Worst case, 26110,32136,11,18,24845
+Average case, 26110,32136,9,13,24845
+
+2673,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,30075,32710,11,13,28679
+Worst case, 30075,32710,12,16,28679
+Average case, 30075,32710,9,12,28679
+
+2970,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,33714,37560,12,9,32173
+Worst case, 33714,37560,13,17,32173
+Average case, 33714,37560,9,12,32173
+
+297,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,2374,2831,8,5,2222
+Worst case, 2374,2831,9,19,2222
+Average case, 2374,2831,7,10,2222
+
+594,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,5333,5586,9,7,5030
+Worst case, 5333,5586,9,12,5030
+Average case, 5333,5586,8,10,5030
+
+891,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,8459,9612,11,11,7947
+Worst case, 8459,9612,11,13,7947
+Average case, 8459,9612,8,11,7947
+
+1188,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,11835,13897,11,9,11211
+Worst case, 11835,13897,11,14,11211
+Average case, 11835,13897,9,12,11211
+
+1485,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,15242,16775,8,10,14420
+Worst case, 15242,16775,11,16,14420
+Average case, 15242,16775,9,11,14420
+
+1782,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,18905,21257,9,7,18003
+Worst case, 18905,21257,11,13,18003
+Average case, 18905,21257,9,12,18003
+
+2079,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,22365,24138,8,13,21273
+Worst case, 22365,24138,12,13,21273
+Average case, 22365,24138,9,12,21273
+
+2376,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,26110,32136,11,16,24845
+Worst case, 26110,32136,11,18,24845
+Average case, 26110,32136,9,13,24845
+
+2673,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,30075,32710,11,13,28679
+Worst case, 30075,32710,12,16,28679
+Average case, 30075,32710,9,12,28679
+
+2970,InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL
+Best case,33714,37560,12,9,32173
+Worst case, 33714,37560,13,17,32173
+Average case, 33714,37560,9,12,32173
+
