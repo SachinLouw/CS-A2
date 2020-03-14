@@ -17,7 +17,7 @@ run0:
 	java -cp bin/ LSBSTApp 9 1 00
 
 run00:
-	java -cp bin/ Testing
+	java -cp bin/ GenDataTables
 
 docs:
 	javadoc -classpath ${BINDIR} -d docs/ src/*.java

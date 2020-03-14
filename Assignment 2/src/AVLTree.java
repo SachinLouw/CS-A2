@@ -66,7 +66,6 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
 
    public void insert ( dataType d )
    {
-      LSAVL.insIncrement();
       root = insert (d, root);
    }
    public BinaryTreeNode<dataType> insert ( dataType d, BinaryTreeNode<dataType> node )

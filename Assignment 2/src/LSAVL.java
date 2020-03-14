@@ -77,9 +77,7 @@ public class LSAVL extends AVLTree<LSObj>{
 		
 		try{
 			BinaryTreeNode<LSObj> found = tree.find(input);
-			String zones = (found.data).getZones();
-			System.out.println(zones);
-		
+			String zones = (found.data).getZones();		
 		}
 		catch(NullPointerException nodeIsNull)
 		{
