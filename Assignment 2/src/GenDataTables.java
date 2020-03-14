@@ -17,7 +17,8 @@ public class GenDataTables{
     public static void main (String[] args){
 
 		for(int i = 1; i<=10; i++){
-			String output = "results/results" + Integer.toString(297*i) + ".csv";
+			String output = "results/results.csv";
+			
 			try{
 				String item[][] = new String[297*i][];
 				File lsSc = new File("data/sample_" + Integer.toString(i) + ".txt");
@@ -37,13 +38,15 @@ public class GenDataTables{
 				int bsResult[][] = new int[297*i][];
 				bs.makeTree("data/sample_" + Integer.toString(i) + ".txt");
 		
-				int bestAVL;
-				int worstAVL;
+				int bestAVL = 0;
+				int worstAVL = 0;
 				int sumAVL = 0;
 		
-				int bestBST;
-				int worstBST;
+				int bestBST = 0;
+				int worstBST = 0;
 				int sumBST = 0;
+
+				int n = 297*i;
 
 				for (int j = 0; j<item.length; j++){
 					String a = item[j][0].split("_")[0];
@@ -56,27 +59,34 @@ public class GenDataTables{
 					if (j>0){
 						bestAVL = Math.min(lsResult[j][0], lsResult[j-1][0]);
 						worstAVL = Math.max(lsResult[j][0], lsResult[j-1][0]);
-					}
+						bestBST = Math.min(bsResult[j][0], bsResult[j-1][0]);
+						worstBST = Math.max(bsResult[j][0], bsResult[j-1][0]);					}
 
 					sumAVL += lsResult[j][0];
-				}
+					sumBST += bsResult[j][0];
+				
 
 
-				File results = new File(output);
-		
-				try{
-					if(!results.exists()){
-						results.createNewFile();
+					File results = new File(output);
+			
+					try{
+						if(!results.exists()){
+							results.createNewFile();
+						}
+				
+						FileWriter fileWriter = new FileWriter(results, true);
+				
+						BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+						bufferedWriter.write(Integer.toString(n) + "\n");
+						bufferedWriter.write("Best case, " + Integer.toString(bestAVL) + "," + Integer.toString(bestBST) + "\n");
+						bufferedWriter.write("Worst case, " + Integer.toString(worstAVL) + "," + Integer.toString(worstBST) + "\n");
+						bufferedWriter.write("Average case, " + Integer.toString(sumAVL/n) + "," + Integer.toString(sumBST/n) + "\n");
+						bufferedWriter.write("\n");
+						bufferedWriter.close();
+					} 
+					catch(Exception e) {
+						System.out.println("COULD NOT LOG!!");
 					}
-			
-					FileWriter fileWriter = new FileWriter(results, true);
-			
-					BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-					bufferedWriter.write("\n");
-					bufferedWriter.close();
-				} 
-				catch(Exception e) {
-					System.out.println("COULD NOT LOG!!");
 				}
 			
 			}

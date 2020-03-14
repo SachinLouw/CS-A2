@@ -2,9 +2,8 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
 
-
 /**
-* <h1>LSAVL</h1>
+* <h1>LSBST</h1>
 * Stores data from file in a BST and processes it based on given input criteria
 * <p>
 *
@@ -64,7 +63,7 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		System.out.println("Number of find operations: "+ Integer.toString(findCount));
 	}
 	
-	public String[] printAreas (String stage, String day, String startTime, String output ){
+	public int[] printAreas (String stage, String day, String startTime, String output ){
 		/*Outputs the areas affected by loadshedding given stage, date and time as input */
 		String str1 = stage + "_" + day + "_" + startTime;
 		String str2 = "";
@@ -77,11 +76,9 @@ public class LSBST extends BinarySearchTree<LSObj>{
 			System.out.println(zones);
 		
 		}
-		catch(NullPointerException nodeIsNull)
-		{
-			System.out.println("No results found"); 
-		}
-		String[] result = {Integer.toString(insCount), Integer.toString(findCount)};
+		catch(NullPointerException nodeIsNull){}
+		
+		int[] result = {insCount, findCount};
 		return result;
 	}
 
