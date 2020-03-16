@@ -39,6 +39,7 @@ public class GenDataTables{
 				int bsResult[][] = new int[297*i][];
 				bs.makeTree("data/sample_" + Integer.toString(i) + ".txt");
 		
+				//insert variables
 				int bestAVLInsert = 0;
 				int worstAVLinsert = 0;
 				int sumAVLInsert = 0;
@@ -47,6 +48,7 @@ public class GenDataTables{
 				int worstBSTIns = 0;
 				int SumBSTIns = 0;
 
+				//find variables
 				int bestAVLFind = 0;
 				int worstAVLFind = 0;
 				int sumAVLFind = 0;
@@ -55,14 +57,15 @@ public class GenDataTables{
 				int worstBSTFind = 0;
 				int SumBSTFind = 0;
 				
+				//balance variables
 				int bestAVLBalance = 0;
 				int worstAVLBalance = 0;
 				int sumAVLBalance = 0;
 				
 				int n = 297*i;
-			
 
 				for (int j = 0; j<item.length; j++){
+					//creates best, worst and average cases
 					String a = item[j][0].split("_")[0];
 					String b = item[j][0].split("_")[1];
 					String c = item[j][0].split("_")[2];
@@ -71,10 +74,12 @@ public class GenDataTables{
 					bsResult[j] = bs.printAreas(a, b, c, output);
 					
 					if (j>0){
+						bestAVLInsert = Math.min(lsResult[j][0], lsResult[j-1][0]);
 						worstAVLinsert = Math.max(lsResult[j][0], lsResult[j-1][0]);
 						bestBSTIns = Math.min(bsResult[j][0], bsResult[j-1][0]);
 						worstBSTIns = Math.max(bsResult[j][0], bsResult[j-1][0]);
 
+						bestAVLFind = Math.min(lsResult[j][1], lsResult[j-1][1]);
 						worstAVLFind = Math.max(lsResult[j][1], lsResult[j-1][1]);
 						bestBSTFind = Math.min(bsResult[j][1], bsResult[j-1][1]);
 						worstBSTFind = Math.max(bsResult[j][1], bsResult[j-1][1]);
@@ -91,9 +96,7 @@ public class GenDataTables{
 					
 					sumAVLBalance += lsResult[j][2];
 				}
-				bestAVLInsert = lsResult[0][0];
-				bestAVLFind = lsResult[0][1];
-				
+
 				File results = new File(output);
 			
 				try{
@@ -123,9 +126,6 @@ public class GenDataTables{
 				System.out.println("An error occurred.");
 				e.printStackTrace();
 			}
-			//write a blank line
-			
-
 			
 		}
 		

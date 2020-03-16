@@ -68,8 +68,8 @@ public class LSAVL extends AVLTree<LSObj>{
 		System.out.println("Number of find operations: "+ Integer.toString(findCount));
     }
 
-	public int[] printAreas (String stage, String day, String startTime, String output ){
-		/*Outputs the areas affected by loadshedding given stage, date and time as input */
+	public int[] printAreas (String stage, String day, String startTime, String output){
+		/*Returns count variables for operations used in data procesing*/
 		String str1 = stage + "_" + day + "_" + startTime;
 		String str2 = "";
 		LSObj input = new LSObj(str1, str2);
@@ -77,12 +77,10 @@ public class LSAVL extends AVLTree<LSObj>{
 		
 		try{
 			BinaryTreeNode<LSObj> found = tree.find(input);
-			String zones = (found.data).getZones();		
+		
 		}
-		catch(NullPointerException nodeIsNull)
-		{
-			System.out.println("No results found"); 
-		}
+		catch(NullPointerException nodeIsNull){}
+
 		int[] result = {insCount, findCount, balCount};
 		return result;
 	}
@@ -95,11 +93,8 @@ public class LSAVL extends AVLTree<LSObj>{
 	}
 	
 /**
-* <h1>LSAVL</h1>
-* Stores data from file in a AVL and processes it based on given input criteria
-* <p>
+* Counter methods
 *
-* @author  LWXSAC001
 */
 	public static void insIncrement(){
 		insCount++;

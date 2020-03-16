@@ -50,8 +50,8 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		
 		try{
 			BinaryTreeNode<LSObj> found = tree.find(input);
-			String zones = (found.data).getZones();
-			System.out.println(zones);
+			//String zones = (found.data).getZones();
+			//System.out.println(zones);
 		
 		}
 
@@ -72,7 +72,7 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		
 		try{
 			BinaryTreeNode<LSObj> found = tree.find(input);
-			String zones = (found.data).getZones();		
+			//String zones = (found.data).getZones();		
 		}
 		catch(NullPointerException nodeIsNull){}
 		
@@ -85,7 +85,9 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		tree.inOrder();
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));
 	}
-	
+/**
+* Counter methods
+*/	
 	public static void insIncrement(){
 		insCount++;
 	}

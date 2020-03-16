@@ -4,8 +4,6 @@
 
 public class BinarySearchTree<dataType extends Comparable<? super dataType>> extends BinaryTree<dataType>
 {
-  // private Counter insertCounter = new Counter(0);
- //  private Counter findCounter = new Counter(0);  
    
    public void insert ( dataType d )
    {
