@@ -1,0 +1,30 @@
+
+*** These modified files were found in JOE when it aborted on Mon Mar 16 16:53:19 2020
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+List
+String
+
+*** File '(Unnamed)'
+LIst
+int
+
+*** File '(Unnamed)'
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+ProcessData.java
+/home/sachin/Desktop/CSC2001F/CS-A2/.git/COMMIT_EDITMSG
+make
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc

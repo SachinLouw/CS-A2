@@ -64,30 +64,56 @@ public class GenDataTables{
 				
 				int n = 297*i;
 
-				for (int j = 0; j<item.length; j++){
+				String a = item[0][0].split("_")[0];
+				String b = item[0][0].split("_")[1];
+				String c = item[0][0].split("_")[2];
+				
+				lsResult[0] = ls.printAreas(a, b, c, output);
+				bsResult[0] = bs.printAreas(a, b, c, output);
+				
+				bestAVLInsert = lsResult[0][0];
+				worstAVLinsert = lsResult[0][0];
+				bestBSTIns = bsResult[0][0];
+				worstBSTIns = bsResult[0][0];
+
+				bestAVLFind = lsResult[0][1];
+				worstAVLFind = lsResult[0][1];
+				bestBSTFind = bsResult[0][1];
+				worstBSTFind = bsResult[0][1];
+				
+				bestAVLBalance = lsResult[0][2];
+				worstAVLBalance = lsResult[0][2];
+
+				sumAVLInsert += lsResult[0][0];
+				SumBSTIns += bsResult[0][0];
+
+				sumAVLFind += lsResult[0][1];
+				SumBSTFind += bsResult[0][1];
+				
+				sumAVLBalance += lsResult[0][2];
+				
+				for (int j = 1; j<item.length; j++){
 					//creates best, worst and average cases
-					String a = item[j][0].split("_")[0];
-					String b = item[j][0].split("_")[1];
-					String c = item[j][0].split("_")[2];
+					a = item[j][0].split("_")[0];
+					b = item[j][0].split("_")[1];
+					c = item[j][0].split("_")[2];
 
 					lsResult[j] = ls.printAreas(a, b, c, output);
 					bsResult[j] = bs.printAreas(a, b, c, output);
 					
-					if (j>0){
-						bestAVLInsert = Math.min(lsResult[j][0], lsResult[j-1][0]);
-						worstAVLinsert = Math.max(lsResult[j][0], lsResult[j-1][0]);
-						bestBSTIns = Math.min(bsResult[j][0], bsResult[j-1][0]);
-						worstBSTIns = Math.max(bsResult[j][0], bsResult[j-1][0]);
+					bestAVLInsert = Math.min(bestAVLInsert, lsResult[j-1][0]);
+					worstAVLinsert = Math.max(worstAVLinsert, lsResult[j-1][0]);
+					bestBSTIns = Math.min(bestBSTIns, bsResult[j-1][0]);
+					worstBSTIns = Math.max(worstBSTIns, bsResult[j-1][0]);
 
-						bestAVLFind = Math.min(lsResult[j][1], lsResult[j-1][1]);
-						worstAVLFind = Math.max(lsResult[j][1], lsResult[j-1][1]);
-						bestBSTFind = Math.min(bsResult[j][1], bsResult[j-1][1]);
-						worstBSTFind = Math.max(bsResult[j][1], bsResult[j-1][1]);
-						
-						bestAVLBalance = Math.min(lsResult[j][2], lsResult[j-1][2]);
-						worstAVLBalance = Math.max(lsResult[j][2], lsResult[j-1][2]);
+					bestAVLFind = Math.min(bestAVLFind, lsResult[j-1][1]);
+					worstAVLFind = Math.max(worstAVLFind, lsResult[j-1][1]);
+					bestBSTFind = Math.min(bestBSTFind, bsResult[j-1][1]);
+					worstBSTFind = Math.max(worstBSTFind, bsResult[j-1][1]);
 					
-					}
+					bestAVLBalance = Math.min(bestAVLBalance, lsResult[j-1][2]);
+					worstAVLBalance = Math.max(worstAVLBalance, lsResult[j-1][2]);
+					
 					sumAVLInsert += lsResult[j][0];
 					SumBSTIns += bsResult[j][0];
 
