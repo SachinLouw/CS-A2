@@ -2,9 +2,7 @@
 * <h1>Testing</h1>
 * Program used to create data tables from generated samples
 * <p>
-*
-* @author  LWXSAC001
-*/
+**/
 
 import java.lang.Math;
 import java.util.Scanner;
@@ -136,9 +134,9 @@ public class GenDataTables{
 					bufferedWriter.write(Integer.toString(n) + ",InsertAVL,InsertBST,FindAVL,FindBST,BalanceAVL\n");
 					bufferedWriter.write("Best case," + Integer.toString(bestAVLInsert) + "," + Integer.toString(bestBSTIns) + 
 					"," + Integer.toString(bestAVLFind) + "," + Integer.toString(bestBSTFind) + "," + Integer.toString(bestAVLBalance) + "\n");
-					bufferedWriter.write("Worst case, " + Integer.toString(worstAVLinsert) + "," + Integer.toString(worstBSTIns) + 
+					bufferedWriter.write("Worst case," + Integer.toString(worstAVLinsert) + "," + Integer.toString(worstBSTIns) + 
 					"," + Integer.toString(worstAVLFind) + "," + Integer.toString(worstBSTFind) + "," + Integer.toString(worstAVLBalance) + "\n");
-					bufferedWriter.write("Average case, " + Integer.toString(sumAVLInsert/n) + "," + Integer.toString(SumBSTIns/n) + 
+					bufferedWriter.write("Average case," + Integer.toString(sumAVLInsert/n) + "," + Integer.toString(SumBSTIns/n) + 
 					"," + Integer.toString(sumAVLFind/n) + "," + Integer.toString(SumBSTFind/n) + "," + Integer.toString(sumAVLBalance/n) + "\n");
 					bufferedWriter.write("\n");
 					bufferedWriter.close();

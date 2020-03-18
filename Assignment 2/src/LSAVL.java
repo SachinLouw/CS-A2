@@ -7,9 +7,7 @@ import java.io.File;
 * <h1>LSAVL</h1>
 * Stores data from file in a AVL and processes it based on given input criteria
 * <p>
-*
-* @author  LWXSAC001
-*/
+**/
 
 public class LSAVL extends AVLTree<LSObj>{
     private AVLTree<LSObj> tree;

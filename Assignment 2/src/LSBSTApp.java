@@ -2,9 +2,7 @@
 * <h1>LSBSTApp</h1>
 * Driver program for LSBST
 * <p>
-*
-* @author  LWXSAC001
-*/
+**/
 
 public class LSBSTApp{
    public static void main (String[] args){

@@ -39,7 +39,7 @@ run00:
 	java -cp bin/ GenDataTables
 
 docs:
-	javadoc -classpath ${BINDIR} -d docs/ src/*.java
+	javadoc -d docs/ src/*.java
 
 cleandocs:
 	rm -r docs/*

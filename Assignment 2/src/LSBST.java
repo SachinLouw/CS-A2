@@ -7,8 +7,7 @@ import java.io.File;
 * Stores data from file in a BST and processes it based on given input criteria
 * <p>
 *
-* @author  LWXSAC001
-*/
+**/
 
 public class LSBST extends BinarySearchTree<LSObj>{
     private BinarySearchTree<LSObj> tree;
@@ -50,8 +49,8 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		
 		try{
 			BinaryTreeNode<LSObj> found = tree.find(input);
-			//String zones = (found.data).getZones();
-			//System.out.println(zones);
+			String zones = (found.data).getZones();
+			System.out.println(zones);
 		
 		}
 
@@ -64,7 +63,7 @@ public class LSBST extends BinarySearchTree<LSObj>{
 	}
 	
 	public int[] printAreas (String stage, String day, String startTime, String output ){
-		/*Outputs the areas affected by loadshedding given stage, date and time as input */
+		/*Returns count variables for operations used in data procesing*/
 		String str1 = stage + "_" + day + "_" + startTime;
 		String str2 = "";
 		LSObj input = new LSObj(str1, str2);
