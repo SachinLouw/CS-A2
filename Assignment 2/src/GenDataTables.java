@@ -1,8 +1,6 @@
 /**
-* <h1>Testing</h1>
-* Program used to create data tables from generated samples
-* <p>
-**/
+* Program used to create data tables from pre-generated randomised subsets of the original loadshedding data
+*/
 
 import java.lang.Math;
 import java.util.Scanner;
@@ -122,7 +120,7 @@ public class GenDataTables{
 				}
 
 				File results = new File(output);
-			
+				// take above results and insert into a csv table  
 				try{
 					if(!results.exists()){
 						results.createNewFile();

@@ -3,10 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.File;
 
 /**
-* <h1>LSBST</h1>
 * Stores data from file in a BST and processes it based on given input criteria
-* <p>
-*
 **/
 
 public class LSBST extends BinarySearchTree<LSObj>{
@@ -17,8 +14,11 @@ public class LSBST extends BinarySearchTree<LSObj>{
 	public LSBST(){
     }
 	
+	/**
+	 * Creates a binary search tree containing loadshedding data
+	 */	
+
     public BinarySearchTree<LSObj> makeTree(String fileName){
-		/**Creates a AVL tree containing loadshedding data*/
 		insCount  = 0;
     	this.tree = new BinarySearchTree<LSObj>();
     	try{
@@ -38,10 +38,14 @@ public class LSBST extends BinarySearchTree<LSObj>{
 			e.printStackTrace();
 		}
 		return tree;
-    }
+	}
 	
+	/**
+	 * Outputs the areas affected by loadshedding given stage, date and time as input 
+	 */
+
 	public void printAreas (String stage, String day, String startTime){
-		/*Outputs the areas affected by loadshedding given stage, date and time as input */
+
 		String str1 = stage + "_" + day + "_" + startTime;
 		String str2 = "";
 		LSObj input = new LSObj(str1, str2);
@@ -62,19 +66,23 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		System.out.println("Number of find operations: "+ Integer.toString(findCount));
 	}
 	
-	public int[] printAreas (String stage, String day, String startTime, String output ){
-		/*Returns count variables for operations used in data procesing*/
-		String str1 = stage + "_" + day + "_" + startTime;
-		String str2 = "";
-		LSObj input = new LSObj(str1, str2);
+	/**
+	 * Returns count variables for operations used in automated data procesing
+	 */
+
+	public int[] printAreas (String stage, String day, String startTime, String output){
+
+		//String str1 = stage + "_" + day + "_" + startTime;
+		//String str2 = "";
+		//LSObj input = new LSObj(str1, str2);
 		findCount = 0;
 		
 		try{
-			BinaryTreeNode<LSObj> found = tree.find(input);
-			//String zones = (found.data).getZones();		
+		//	BinaryTreeNode<LSObj> found = tree.find(input);
+		
 		}
 		catch(NullPointerException nodeIsNull){}
-		
+
 		int[] result = {insCount, findCount};
 		return result;
 	}
@@ -84,14 +92,18 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		tree.inOrder();
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));
 	}
-/**
-* Counter methods
-*/	
+	/**
+	* Counter method for insert operations
+	*/
 	public static void insIncrement(){
 		insCount++;
 	}
-	
+
+	/**
+	* Counter method for search operations
+	*/
 	public static void findIncrement(){
 		findCount++;
 	}
+
 }

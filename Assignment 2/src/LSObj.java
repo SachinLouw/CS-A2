@@ -1,6 +1,9 @@
 import java.util.Arrays;
 import java.lang.Comparable;
 
+/**
+ * Storage object for Loadshedding data. Takes the key value pair from a given line, storing key as schedule and value under zones.
+ */
 public class LSObj implements Comparable<LSObj> {
     private String schedule;
     private String zones;

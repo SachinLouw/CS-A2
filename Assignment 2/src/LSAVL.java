@@ -4,10 +4,8 @@ import java.lang.NullPointerException;
 import java.io.File;
 
 /**
-* <h1>LSAVL</h1>
-* Stores data from file in a AVL and processes it based on given input criteria
-* <p>
-**/
+* Stores data from file in a AVL tree and processes it based on given input criteria
+*/
 
 public class LSAVL extends AVLTree<LSObj>{
     private AVLTree<LSObj> tree;
@@ -16,10 +14,14 @@ public class LSAVL extends AVLTree<LSObj>{
 	private static int balCount;
 
 	public LSAVL(){
-    }
+	}
 	
+	/**
+	 * Creates an AVL tree containing loadshedding data
+	 */	
+
     public AVLTree<LSObj> makeTree(String fileName){
-		/**Creates an AVL tree containing loadshedding data*/
+		
 		insCount  = 0;
 		balCount = 0;
     	this.tree = new AVLTree<LSObj>();
@@ -41,10 +43,15 @@ public class LSAVL extends AVLTree<LSObj>{
 			e.printStackTrace();
 		}
 		return tree;
-    }
+	}
 	
-   public void printAreas (String stage, String day, String startTime){
-		/*Outputs the areas affected by loadshedding given stage, date and time as input */
+	/**
+	 * Outputs the areas affected by loadshedding given stage, date and time as input 
+	 */
+
+	public void printAreas (String stage, String day, String startTime){
+
+		
 		String str1 = stage + "_" + day + "_" + startTime;
 		String str2 = "";
 		LSObj input = new LSObj(str1, str2);
@@ -66,15 +73,19 @@ public class LSAVL extends AVLTree<LSObj>{
 		System.out.println("Number of find operations: "+ Integer.toString(findCount));
     }
 
+	/**
+	 * Returns count variables for operations used in automated data procesing
+	 */
+
 	public int[] printAreas (String stage, String day, String startTime, String output){
-		/*Returns count variables for operations used in data procesing*/
+
 		String str1 = stage + "_" + day + "_" + startTime;
 		String str2 = "";
 		LSObj input = new LSObj(str1, str2);
 		findCount = 0;
 		
 		try{
-			BinaryTreeNode<LSObj> found = tree.find(input);
+		BinaryTreeNode<LSObj> found = tree.find(input);
 		
 		}
 		catch(NullPointerException nodeIsNull){}
@@ -82,26 +93,35 @@ public class LSAVL extends AVLTree<LSObj>{
 		int[] result = {insCount, findCount, balCount};
 		return result;
 	}
-	
-   public void printAllAreas (){
-		/*Outputs all the areas affected by loadshedding for all stages*/
+
+	/**
+	 * Outputs all the areas affected by loadshedding for all stages
+	 */
+
+	public void printAllAreas (){
+
 		tree.inOrder();
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));
 		System.out.println("Number of balance operations: "+ Integer.toString(balCount));
 	}
 	
-/**
-* Counter methods
-*
-*/
+	/**
+	* Counter method for insert operations
+	*/
 	public static void insIncrement(){
 		insCount++;
 	}
-	
+
+	/**
+	* Counter method for search operations
+	*/
 	public static void findIncrement(){
 		findCount++;
 	}
 
+	/**
+	* Counter method for balancing operations
+	*/	
 	public static void balIncrement(){
 		balCount++;
 	}

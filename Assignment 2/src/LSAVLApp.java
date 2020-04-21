@@ -1,12 +1,12 @@
 /**
-* <h1>LSAVLApp</h1>
-* Driver program for LSAVL
-* <p>
-*
-* @author  LWXSAC001
-*/
+ * Driver program for LSAVL
+ * Takes in arguments for stage, day and time and 
+ * prints which areas will be affected by loadshedding
+ * Prints all areas if no arguments given
+ */
 
 public class LSAVLApp{
+   
     public static void main (String[] args){
 
       LSAVL ls = new LSAVL ();

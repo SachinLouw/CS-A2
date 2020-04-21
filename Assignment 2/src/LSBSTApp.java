@@ -1,8 +1,9 @@
 /**
-* <h1>LSBSTApp</h1>
-* Driver program for LSBST
-* <p>
-**/
+ * Driver program for LSBST
+ * Takes in arguments for stage, day and time and 
+ * prints which areas will be affected by loadshedding
+ * Prints all areas if no arguments given
+ */
 
 public class LSBSTApp{
    public static void main (String[] args){

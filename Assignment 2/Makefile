@@ -7,6 +7,7 @@ BINDIR=bin/
 
 all:
 	javac -d bin $(SRCDIR)/*.java
+
 clean:
 	rm */*.class
 run:
@@ -42,4 +43,4 @@ docs:
 	javadoc -d docs/ src/*.java
 
 cleandocs:
-	rm -r docs/*
+	rm -r docs/
