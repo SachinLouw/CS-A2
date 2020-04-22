@@ -87,6 +87,28 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		return result;
 	}
 
+	public String displayAreas (String stage, String day, String startTime){
+
+		
+		String str1 = stage + "_" + day + "_" + startTime;
+		String str2 = "";
+		LSObj input = new LSObj(str1, str2);
+		findCount = 0;
+		String zones = "";
+		
+		try{
+			BinaryTreeNode<LSObj> found = tree.find(input);
+			zones = (found.data).getZones();
+		
+		}
+		catch(NullPointerException nodeIsNull)
+		{
+			zones = "No results found"; 
+		}
+
+		return zones;
+	}
+	
 	public void printAllAreas (){
 		/*Outputs all the areas affected by loadshedding for all stages*/
 		tree.inOrder();

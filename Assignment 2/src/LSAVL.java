@@ -8,7 +8,7 @@ import java.io.File;
 */
 
 public class LSAVL extends AVLTree<LSObj>{
-    private AVLTree<LSObj> tree;
+	private AVLTree<LSObj> tree;
 	private static int insCount;
 	private static int findCount;
 	private static int balCount;
@@ -94,6 +94,27 @@ public class LSAVL extends AVLTree<LSObj>{
 		return result;
 	}
 
+	public String displayAreas (String stage, String day, String startTime){
+
+		
+		String str1 = stage + "_" + day + "_" + startTime;
+		String str2 = "";
+		LSObj input = new LSObj(str1, str2);
+		findCount = 0;
+		String zones = "";
+		
+		try{
+			BinaryTreeNode<LSObj> found = tree.find(input);
+			zones = (found.data).getZones();
+		
+		}
+		catch(NullPointerException nodeIsNull)
+		{
+			zones = "No results found"; 
+		}
+
+		return zones;
+    }
 	/**
 	 * Outputs all the areas affected by loadshedding for all stages
 	 */
@@ -104,24 +125,23 @@ public class LSAVL extends AVLTree<LSObj>{
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));
 		System.out.println("Number of balance operations: "+ Integer.toString(balCount));
 	}
-	
 	/**
-	* Counter method for insert operations
-	*/
+	 *  Counter method for insert operations
+	 */
 	public static void insIncrement(){
 		insCount++;
 	}
 
 	/**
-	* Counter method for search operations
-	*/
+	 * Counter method for search operations
+	 */
 	public static void findIncrement(){
 		findCount++;
 	}
 
 	/**
-	* Counter method for balancing operations
-	*/	
+	 * Counter method for balancing operations
+	 */	
 	public static void balIncrement(){
 		balCount++;
 	}
