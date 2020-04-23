@@ -14,6 +14,9 @@ run:
 	java -cp bin/ LSAVLApp 1 1 00 
 	java -cp bin/ LSBSTApp 1 1 00
 
+rundisplay:
+	java -cp bin/ AVLGui
+
 runtrial:
 	echo "Three valid parameters" >> results/output.txt
 	java -cp bin/ LSAVLApp 1 1 00 >> results/output.txt

@@ -72,13 +72,13 @@ public class LSBST extends BinarySearchTree<LSObj>{
 
 	public int[] printAreas (String stage, String day, String startTime, String output){
 
-		//String str1 = stage + "_" + day + "_" + startTime;
-		//String str2 = "";
-		//LSObj input = new LSObj(str1, str2);
+		String str1 = stage + "_" + day + "_" + startTime;
+		String str2 = "";
+		LSObj input = new LSObj(str1, str2);
 		findCount = 0;
 		
 		try{
-		//	BinaryTreeNode<LSObj> found = tree.find(input);
+		BinaryTreeNode<LSObj> found = tree.find(input);
 		
 		}
 		catch(NullPointerException nodeIsNull){}
@@ -86,31 +86,11 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		int[] result = {insCount, findCount};
 		return result;
 	}
-
-	public String displayAreas (String stage, String day, String startTime){
-
-		
-		String str1 = stage + "_" + day + "_" + startTime;
-		String str2 = "";
-		LSObj input = new LSObj(str1, str2);
-		findCount = 0;
-		String zones = "";
-		
-		try{
-			BinaryTreeNode<LSObj> found = tree.find(input);
-			zones = (found.data).getZones();
-		
-		}
-		catch(NullPointerException nodeIsNull)
-		{
-			zones = "No results found"; 
-		}
-
-		return zones;
-	}
 	
+	/**
+	 * Outputs all the areas affected by loadshedding for all stages
+	 */
 	public void printAllAreas (){
-		/*Outputs all the areas affected by loadshedding for all stages*/
 		tree.inOrder();
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));
 	}
