@@ -1,0 +1,149 @@
+Three valid parameters
+AVL Tree
+Stage 1 loadshedding 
+Day 1, 00:00
+Zones to be loadshed: 1
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 8
+Zones to be loadshed: 1
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 8
+Stage 3 loadshedding 
+Day 15, 10:00
+Zones to be loadshed: 9, 1, 13
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 13
+Zones to be loadshed: 9, 1, 13
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 13
+Stage 7 loadshedding 
+Day 11, 12:00
+Zones to be loadshed: 9, 1, 5, 13, 2, 10, 14
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 11
+Zones to be loadshed: 9, 1, 5, 13, 2, 10, 14
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 11
+Binary Search Tree
+Stage 1 loadshedding 
+Day 1, 00:00
+Zones to be loadshed: 1
+Number of insertions: 270100
+Number of find operations: 1
+Stage 3 loadshedding 
+Day 15, 10:00
+Zones to be loadshed: 9, 1, 13
+Number of insertions: 270100
+Number of find operations: 54
+Stage 7 loadshedding 
+Day 11, 12:00
+Zones to be loadshed: 9, 1, 5, 13, 2, 10, 14
+Number of insertions: 270100
+Number of find operations: 153
+Three invalid parameters
+AVL Tree
+Stage 9 loadshedding 
+Day 1, 00:00
+No results found
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 12
+No results found
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 12
+Stage 1 loadshedding 
+Day 33, 00:00
+No results found
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 12
+No results found
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 12
+Giving most relevant results
+Stage 1 loadshedding 
+Day 1, 12:00
+Zones to be loadshed: 7
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 12
+Day 1, 14:00
+Zones to be loadshed: 8
+Number of insertions: 35277
+Number of balance operations: 34376
+Number of find operations: 13
+Binary Search Tree
+Stage 9 loadshedding 
+Day 1, 00:00
+No results found
+Number of insertions: 270100
+Number of find operations: 204
+Stage 1 loadshedding 
+Day 33, 00:00
+No results found
+Number of insertions: 270100
+Number of find operations: 16
+Giving most relevant results
+Stage 1 loadshedding 
+Day 1, 12:00
+Zones to be loadshed: 7
+Number of insertions: 270100
+Number of find operations: 9
+Day 1, 14:00
+Zones to be loadshed: 8
+Number of insertions: 270100
+Number of find operations: 10
+No parameters
+AVL Tree
+[1, 10, 00] 15
+[1, 10, 02] 16
+[1, 10, 04] 1
+[1, 10, 06] 2
+[1, 10, 08] 3
+[1, 10, 10] 4
+[1, 10, 12] 5
+[1, 10, 14] 6
+[1, 10, 16] 7
+[1, 10, 18] 8
+...
+[8, 9, 06] 6, 14, 2, 10, 7, 15, 3, 11
+[8, 9, 08] 7, 15, 3, 11, 8, 16, 4, 12
+[8, 9, 10] 8, 16, 4, 12, 9, 1, 5, 13
+[8, 9, 12] 9, 1, 5, 13, 10, 2, 6, 14
+[8, 9, 14] 10, 2, 6, 14, 11, 3, 7, 15
+[8, 9, 16] 11, 3, 7, 15, 12, 4, 8, 16
+[8, 9, 18] 12, 4, 8, 16, 13, 5, 9, 1
+[8, 9, 20] 13, 5, 9, 1, 14, 6, 10, 2
+[8, 9, 22] 14, 6, 10, 2, 15, 7, 11, 3
+Number of insertions: 35277
+Number of balance operations: 34376
+Binary Search Tree
+[1, 10, 00] 15
+[1, 10, 02] 16
+[1, 10, 04] 1
+[1, 10, 06] 2
+[1, 10, 08] 3
+[1, 10, 10] 4
+[1, 10, 12] 5
+[1, 10, 14] 6
+[1, 10, 16] 7
+[1, 10, 18] 8
+...
+[8, 9, 06] 6, 14, 2, 10, 7, 15, 3, 11
+[8, 9, 08] 7, 15, 3, 11, 8, 16, 4, 12
+[8, 9, 10] 8, 16, 4, 12, 9, 1, 5, 13
+[8, 9, 12] 9, 1, 5, 13, 10, 2, 6, 14
+[8, 9, 14] 10, 2, 6, 14, 11, 3, 7, 15
+[8, 9, 16] 11, 3, 7, 15, 12, 4, 8, 16
+[8, 9, 18] 12, 4, 8, 16, 13, 5, 9, 1
+[8, 9, 20] 13, 5, 9, 1, 14, 6, 10, 2
+[8, 9, 22] 14, 6, 10, 2, 15, 7, 11, 3
+Number of insertions: 270100

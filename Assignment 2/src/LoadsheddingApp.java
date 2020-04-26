@@ -7,17 +7,17 @@ import javax.swing.*;
 /**
  * Displays a user interface that uses both search apps
  */
-public class AVLGui extends JFrame implements ActionListener{
+public class LoadsheddingApp extends JFrame implements ActionListener {
 
 	public JFrame frame;
-   
+
 	private JTextField stageTextField;
 	private JTextField dateTextField;
 	private JTextField timeTextField;
-   
+
 	private JTextArea viewAreas;
 	private JTextField txtPleaseEnterThe;
-   
+
 	private String stage;
 	private String date;
 	private String time;
@@ -29,7 +29,7 @@ public class AVLGui extends JFrame implements ActionListener{
 	 */
 	public static void main(String[] args) {
 		try {
-			AVLGui window = new AVLGui();
+			LoadsheddingApp window = new LoadsheddingApp();
 			window.frame.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -39,7 +39,7 @@ public class AVLGui extends JFrame implements ActionListener{
 	/**
 	 * Create the application.
 	 */
-	public AVLGui() {
+	public LoadsheddingApp() {
 		frame = new JFrame();
 		frame.setTitle("Loadshedding App ("+mode+")");
 		frame.setBounds(100, 100, 640, 480);

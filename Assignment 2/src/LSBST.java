@@ -58,8 +58,11 @@ public class LSBST extends BinarySearchTree<LSObj>{
 		
 		}
 
-		catch(NullPointerException nodeIsNull) {
-			System.out.println("No results found"); 
+		catch(NullPointerException notFound)
+		{
+			System.out.println("No results found. \n" +
+								"Please make sure stage is between 1 and 8, date is between 1 and 31 and \n"
+								+ "time only even hours (00, 02, 04, ...)"); 
 		}
 
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));

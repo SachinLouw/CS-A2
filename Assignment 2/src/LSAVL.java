@@ -63,9 +63,11 @@ public class LSAVL extends AVLTree<LSObj>{
 			System.out.println(zones);
 		
 		}
-		catch(NullPointerException nodeIsNull)
+		catch(NullPointerException notFound)
 		{
-			System.out.println("No results found"); 
+			System.out.println("No results found. \n" +
+								"Please make sure stage is between 1 and 8, date is between 1 and 31 and \n"
+								+ "time only even hours (00, 02, 04, ...)"); 
 		}
 
 		System.out.println("Number of insertions: "+ Integer.toString(insCount));

@@ -15,28 +15,39 @@ run:
 	java -cp bin/ LSBSTApp 1 1 00
 
 rundisplay:
-	java -cp bin/ AVLGui
+	java -cp bin/ LoadsheddingApp
 
 runtrial:
 	echo "Three valid parameters" >> results/output.txt
+
+	echo "AVL Tree" >> results/output.txt
 	java -cp bin/ LSAVLApp 1 1 00 >> results/output.txt
 	java -cp bin/ LSAVLApp 3 15 10 >> results/output.txt
 	java -cp bin/ LSAVLApp 7 11 12 >> results/output.txt
 
+	echo "Binary Search Tree" >> results/output.txt
 	java -cp bin/ LSBSTApp 1 1 00 >> results/output.txt
 	java -cp bin/ LSBSTApp 3 15 10 >> results/output.txt
 	java -cp bin/ LSBSTApp 7 11 12 >> results/output.txt
 
 	echo "Three invalid parameters" >> results/output.txt
+
+	echo "AVL Tree" >> results/output.txt
 	java -cp bin/ LSAVLApp 9 1 00 >> results/output.txt
 	java -cp bin/ LSAVLApp 1 33 00 >> results/output.txt
 	java -cp bin/ LSAVLApp 1 1 13 >> results/output.txt
+
+	echo "Binary Search Tree" >> results/output.txt
 	java -cp bin/ LSBSTApp 9 1 00 >> results/output.txt
 	java -cp bin/ LSBSTApp 1 33 00 >> results/output.txt
 	java -cp bin/ LSBSTApp 1 1 13 >> results/output.txt
 
 	echo "No parameters" >> results/output.txt
+
+	echo "AVL Tree" >> results/output.txt
 	java -cp bin/ LSAVLApp >> results/output.txt
+
+	echo "Binary Search Tree" >> results/output.txt
 	java -cp bin/ LSBSTApp >> results/output.txt
 
 run00:
