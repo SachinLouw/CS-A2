@@ -24,7 +24,7 @@ public class SimulatorOne {
             int num = numNodes;
             while (num>0){
                 String nodes = graphFile.nextLine();
-                StringTokenizer st = new StringTokenizer(nodes, " ");
+                StringTokenizer st = new StringTokenizer(nodes.replaceAll("\\s+", " "), " ");
                 String source = st.nextToken();
                 while(st.hasMoreTokens())
                 {
@@ -51,7 +51,9 @@ public class SimulatorOne {
         
         numVictims = Integer.parseInt(graphFile.nextLine());
         if (numVictims>0){
-            victims = graphFile.nextLine();
+            while(graphFile.hasNextInt()){
+                victims = graphFile.nextLine().trim();
+            }
             StringTokenizer vt = new StringTokenizer(victims, " ");
             while(vt.hasMoreTokens()){
                 String number = vt.nextToken();
@@ -72,7 +74,6 @@ public class SimulatorOne {
         PrintStream stdErr = System.err; 
         System.setOut(printStream);
         System.setErr(printStream);
-               
         while(v.hasMoreTokens()){
             String victim = v.nextToken();
 

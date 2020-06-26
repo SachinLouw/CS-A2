@@ -20,7 +20,7 @@ public class Hospital {
             pathBack = sc.nextLine();
             hospitals.add(hospital);
             cost.add(costForward + costBack);
-            path.add(pathForward.concat(pathBack.substring(1)));
+            path.add(pathForward.concat(pathBack.substring(pathBack.indexOf(" "))));
         }
         sc.close();
     }
@@ -40,5 +40,26 @@ public class Hospital {
                      "\n" + path.get(i);
         }
         return trips;
+
+        // boolean multi = false;
+        // int minCost = Collections.min(cost);
+        // int minTrip = cost.indexOf(minCost);
+        // String trips = hospitals.get(minTrip) + "\n" + 
+        //                 path.get(minTrip);
+        // String multiple = "multiple solutions cost " + 
+        //                 Integer.toString(minCost);
+        // String multiTrips = hospitals.get(minTrip) + "\n" + multiple;
+        // for (int i = 0; i<hospitals.size(); i++){
+        //     if (i==minTrip) {continue;}
+        //     else if ((cost.get(i)==minCost)
+        //             &&(!(path.get(i).equals(path.get(minTrip)))))
+        //     {
+        //         multi = true;
+        //         multiTrips += "\n" + hospitals.get(i) + 
+        //              "\n" + multiple;
+        //     }
+        // }
+        // if (multi) return multiTrips;
+        // return trips;
     }
 }
